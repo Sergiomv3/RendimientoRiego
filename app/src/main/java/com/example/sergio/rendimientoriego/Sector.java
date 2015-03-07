@@ -16,6 +16,9 @@ public class Sector {
         this.nombre = nombre;
     }
 
+    public Sector(String s, int wednesday, int i) {
+    }
+
     public String getNombre() {
         return nombre;
     }
