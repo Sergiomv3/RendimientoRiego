@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 
 public class MainActivity extends ActionBarActivity {
     /***** VARIABLES GLOBALES******/
