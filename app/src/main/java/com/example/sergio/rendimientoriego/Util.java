@@ -8,7 +8,7 @@ public class Util {
     private float litrosGoteros;
     public Util(){
         this.num_goteros = 4;
-        this.litrosGoteros = (float)16.0;
+        this.litrosGoteros = (float)0.27;
     }
     public Util(int num_goteros, int litrosGoteros) {
         this.num_goteros = num_goteros;

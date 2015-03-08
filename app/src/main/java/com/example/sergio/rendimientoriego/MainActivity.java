@@ -199,6 +199,7 @@ public class MainActivity extends ActionBarActivity {
         // coger hora actual
         // coger sector spinner
         // actualizar bdRendimiento
+        updateRendimientos();
 
     }
     private void setRendimientos(Rendimiento r){
