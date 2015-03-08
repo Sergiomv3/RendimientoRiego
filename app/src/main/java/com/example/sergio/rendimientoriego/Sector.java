@@ -6,17 +6,25 @@ import java.util.Calendar;
  * Created by Sergio on 07/03/2015.
  */
 public class Sector {
+
     private String nombre;
     private int diaRiego;
-    private int num_Olivos;
+    private int numOlivos;
+    private String zona;
 
-    public Sector(int num_Olivos, int diaRiego, String nombre) {
-        this.num_Olivos = num_Olivos;
-        this.diaRiego = diaRiego;
+    public Sector(String nombre, int diaRiego, int numOlivos, String zona) {
         this.nombre = nombre;
+        this.diaRiego = diaRiego;
+        this.numOlivos = numOlivos;
+        this.zona = zona;
     }
 
-    public Sector(String s, int wednesday, int i) {
+    public String getZona() {
+        return zona;
+    }
+
+    public void setZona(String zona) {
+        this.zona = zona;
     }
 
     public String getNombre() {
@@ -27,14 +35,6 @@ public class Sector {
         this.nombre = nombre;
     }
 
-    public int getNum_Olivos() {
-        return num_Olivos;
-    }
-
-    public void setNum_Olivos(int num_Olivos) {
-        this.num_Olivos = num_Olivos;
-    }
-
     public int getDiaRiego() {
         return diaRiego;
     }
@@ -43,13 +43,41 @@ public class Sector {
         this.diaRiego = diaRiego;
     }
 
+    public int getNumOlivos() {
+        return numOlivos;
+    }
+
+    public void setNumOlivos(int numOlivos) {
+        this.numOlivos = numOlivos;
+    }
+
     @Override
     public String toString() {
-        return "Sector{" +
-                "nombre='" + nombre + '\'' +
-                ", diaRiego=" + diaRiego +
-                ", num_Olivos=" + num_Olivos +
-                '}';
+        return zona+" - "+nombre+", "+numOlivos+" olivos";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Sector sector = (Sector) o;
+
+        if (diaRiego != sector.diaRiego) return false;
+        if (numOlivos != sector.numOlivos) return false;
+        if (nombre != null ? !nombre.equals(sector.nombre) : sector.nombre != null) return false;
+        if (zona != null ? !zona.equals(sector.zona) : sector.zona != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = nombre != null ? nombre.hashCode() : 0;
+        result = 31 * result + diaRiego;
+        result = 31 * result + numOlivos;
+        result = 31 * result + (zona != null ? zona.hashCode() : 0);
+        return result;
     }
 }
 

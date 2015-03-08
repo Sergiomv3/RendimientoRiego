@@ -9,10 +9,10 @@ import java.util.GregorianCalendar;
 public class Rendimiento {
     private Calendar fechaInicio, fechaFinal;
     private float litrosInicio, litrosFinal, rendimiento;
-    private Zona zona;
+    private String zona;
     private Sector sector;
 
-    public Rendimiento(Calendar fechaInicio, int rendimiento, Sector sector, Zona zona, int litrosInicio, int litrosFinal, Calendar fechaFinal) {
+    public Rendimiento(Calendar fechaInicio, float rendimiento, Sector sector, String zona, float litrosInicio, float litrosFinal, Calendar fechaFinal) {
         this.fechaInicio = fechaInicio;
         this.rendimiento = rendimiento;
         this.sector = sector;
@@ -22,11 +22,13 @@ public class Rendimiento {
         this.fechaFinal = fechaFinal;
     }
 
-    public Zona getZona() {
+
+
+    public String getZona() {
         return zona;
     }
 
-    public void setZona(Zona zona) {
+    public void setZona(String zona) {
         this.zona = zona;
     }
 
@@ -50,7 +52,7 @@ public class Rendimiento {
         return rendimiento;
     }
 
-    public void setRendimiento(int rendimiento) {
+    public void setRendimiento(float rendimiento) {
         this.rendimiento = rendimiento;
     }
 
@@ -58,7 +60,7 @@ public class Rendimiento {
         return litrosFinal;
     }
 
-    public void setLitrosFinal(int litrosFinal) {
+    public void setLitrosFinal(float litrosFinal) {
         this.litrosFinal = litrosFinal;
     }
 
@@ -66,7 +68,7 @@ public class Rendimiento {
         return litrosInicio;
     }
 
-    public void setLitrosInicio(int litrosInicio) {
+    public void setLitrosInicio(float litrosInicio) {
         this.litrosInicio = litrosInicio;
     }
 

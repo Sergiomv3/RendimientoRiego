@@ -26,7 +26,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.github.Todd-Davies:ProgressWheel:1.0'
-
-
-
+    compile files('libs/db4o-8.0.276.16149-all-java5.jar')
 }
