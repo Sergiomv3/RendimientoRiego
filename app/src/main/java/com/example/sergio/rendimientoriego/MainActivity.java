@@ -232,12 +232,11 @@ public class MainActivity extends ActionBarActivity {
                     }
                 });
         if (rendimientos.hasNext()){
+
             Rendimiento r = rendimientos.next();
             Util util = new Util();
             EditText etLecturaf;
             etLecturaf = (EditText)findViewById(R.id.etLecturaF);
-            r.setFechaFinal(Calendar.getInstance());
-            r.setLitrosFinal(Float.valueOf(etLecturaf.toString()));
             // RENDIMIENTO = (litros reales / litros teoricos ) * 100
             // litrosTeorico = numOlivos*Util.litrosGoteros * mintuos
             // litrosReales = lecturaF - lecturaI
@@ -255,6 +254,10 @@ public class MainActivity extends ActionBarActivity {
             float litrosReales = r.getLitrosFinal() - r.getLitrosInicio();
             float rendimientoFinal = (litrosReales/litrosTeoricos)*100;
             // CALCULAR RENDIMIENTO + ANIMACION
+            // AÑADIMOS A BD
+
+            r.setFechaFinal(Calendar.getInstance());
+            r.setLitrosFinal(Float.valueOf(etLecturaf.toString()));
             r.setRendimiento(rendimientoFinal);
             pw.setText(String.valueOf(rendimientoFinal));
             bdRendimientos.store(r);
